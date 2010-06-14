@@ -3,8 +3,6 @@ package services;
 import framework.DefaultResourceService;
 import framework.annotations.*;
 
-
-@Encryption
 @Service(url="User")
 public class Users extends DefaultResourceService {
 	

@@ -3,26 +3,31 @@ package framework;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.InvalidParameterException;
+import java.util.HashMap;
+import java.util.Map.Entry;
 
 import framework.annotations.SecurityMode;
 
 public class AccessRestrictor {
 
 	private SecurityMode mode;
-	private InetAddress network;
-	private int netmask = 0;
+	private HashMap<InetAddress, Integer> networks = new HashMap<InetAddress, Integer>();
 
-	public AccessRestrictor(SecurityMode mode, String netmask) {
+	public AccessRestrictor(SecurityMode mode, String[] networks) {
 		this.mode = mode;
-		if (netmask.indexOf('/') == -1) {
-			throw new InvalidParameterException("netmask must contain a slash!");
+		for (String network : networks) {
+			if (network.indexOf('/') == -1) {
+				throw new InvalidParameterException("netmask must contain a slash!");
+			}
+			try {
+				this.networks.put(
+					InetAddress.getByName(network.substring(0, network.indexOf('/')))
+				,	Integer.parseInt(network.substring(network.indexOf('/')+1))
+				);
+			} catch (UnknownHostException e) {
+				e.printStackTrace();
+			}
 		}
-		try {
-			network = InetAddress.getByName(netmask.substring(0, netmask.indexOf('/')));
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-		}
-		
 	}
 
 	public boolean checkAddress(String remoteAddr) {
@@ -34,13 +39,17 @@ public class AccessRestrictor {
 		}
 		if (remote == null) return false;
 		
-		switch (mode) {
-		case WHITELIST:
-			return inNetMask(ipToInt(remote), ipToInt(network), netmask);
-		case BLACKLIST:
-			return !inNetMask(ipToInt(remote), ipToInt(network), netmask);
+		for (Entry<InetAddress, Integer> entry : networks.entrySet()) {
+			if (inNetMask(ipToInt(remote), ipToInt(entry.getKey()), entry.getValue())) {
+				switch (mode) {
+				case WHITELIST:
+					return true;
+				case BLACKLIST:
+					return false;
+				}
+			}
 		}
-		return false;
+		return false; // if no addresses are given, we block everything
 	}
 	
 	public boolean inNetMask(int address, int network, int netmask) {

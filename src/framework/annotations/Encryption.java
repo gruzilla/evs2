@@ -12,6 +12,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface Encryption {
-	String netmask() default "192.168.0.0/24";
+	String[] netmask() default "255.255.255.0/24";
 	SecurityMode mode() default SecurityMode.WHITELIST;
 }

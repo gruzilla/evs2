@@ -80,16 +80,16 @@
 		<classpath refid="tomcat.classpath" /> 
 	</taskdef>
 
-	<target name="run" depends="compile">
+	<target name="deploy" depends="compile">
 		<deploy url="${managerUrl}" username="${username}" password="${password}"
 		            path="${applicationPath}" war="file:ex2.war"/>
 	</target>
 
-	<target name="stop" description="Remove web application">
+	<target name="undeploy" description="Remove web application">
 		<undeploy url="${managerUrl}" username="${username}" password="${password}"
 			path="${applicationPath}"/>
 	</target>
 	
-	<target name="main" depends="clean,run"/>
+	<target name="main" depends="clean,deploy"/>
 
 </project>

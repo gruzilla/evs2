@@ -76,11 +76,11 @@ public class ServiceInvoker {
 		try {
 			body = checkEncryption(service, body, request);
 		} catch (EncryptionRequiredException e1) {
-			throw new SecurityException("Encryption required!");
+			throw new SecurityException("Encryption required!\n"+e1.getMessage());
 		} catch (AddressNotAllowedException e1) {
-			throw new SecurityException("Address not allowed!");
+			throw new SecurityException("Address not allowed!\n"+e1.getMessage());
 		} catch (CryptException e1) {
-			throw new SecurityException("En/Decryptiong did not work!");
+			throw new SecurityException("En/Decryptiong did not work!\n"+e1.getMessage());
 		}
 		
 		// 5. Parse body
@@ -129,7 +129,9 @@ public class ServiceInvoker {
 			// TODO: check if request-ip-address is black/white-listed by annotation
 			AccessRestrictor acl = new AccessRestrictor(crypt.mode(), crypt.netmask());
 			if (!acl.checkAddress(request.getRemoteAddr())) {
-				throw new AddressNotAllowedException();
+				String msg = "";
+				for (String netmask : crypt.netmask()) msg += " "+netmask;
+				throw new AddressNotAllowedException(request.getRemoteAddr()+" in"+msg);
 			}
 			
 			Crypt cryptor = new Crypt();
