@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_tCnFsEWeEd-yrryU_T5UwA" name="framework">
+  <elementImport xmi:id="_tDDKkEWeEd-yrryU_T5UwA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_tDDKkUWeEd-yrryU_T5UwA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_tDDKkkWeEd-yrryU_T5UwA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_tDDKk0WeEd-yrryU_T5UwA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <elementImport xmi:id="_4VrssEWvEd-yrryU_T5UwA"/>
+  <elementImport xmi:id="_4ktAIEWvEd-yrryU_T5UwA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_F5BSsEWsEd-yrryU_T5UwA" name="RequestHandler">
+    <ownedOperation xmi:id="_IYC54EWsEd-yrryU_T5UwA" name="doDelete">
+      <ownedParameter xmi:id="_tJ1xQEWtEd-yrryU_T5UwA" direction="return"/>
+      <ownedParameter xmi:id="_tJ1xQUWtEd-yrryU_T5UwA" name="HttpServletRequest request"/>
+      <ownedParameter xmi:id="_tJ1xQkWtEd-yrryU_T5UwA" name="HttpServletResponse response"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_Op55gEWsEd-yrryU_T5UwA" name="doGet">
+      <ownedParameter xmi:id="_vD9UkEWtEd-yrryU_T5UwA" direction="return"/>
+      <ownedParameter xmi:id="_vD9UkUWtEd-yrryU_T5UwA" name="HttpServletRequest request"/>
+      <ownedParameter xmi:id="_vD9UkkWtEd-yrryU_T5UwA" name="HttpServletResponse response"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_vS9Z4EWtEd-yrryU_T5UwA" name="doPost">
+      <ownedParameter xmi:id="_whXGsEWtEd-yrryU_T5UwA" direction="return"/>
+      <ownedParameter xmi:id="_whXGsUWtEd-yrryU_T5UwA" name="HttpServletRequest request"/>
+      <ownedParameter xmi:id="_whXGskWtEd-yrryU_T5UwA" name="HttpServletResponse response"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_xmSucEWtEd-yrryU_T5UwA" name="doPut">
+      <ownedParameter xmi:id="_yhhnoEWtEd-yrryU_T5UwA" direction="return"/>
+      <ownedParameter xmi:id="_yhiOsEWtEd-yrryU_T5UwA" name="HttpServletRequest request"/>
+      <ownedParameter xmi:id="_yhiOsUWtEd-yrryU_T5UwA" name="HttpServletResponse response"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_7xiacEWtEd-yrryU_T5UwA" name="ServiceInvoker" clientDependency="_8g7oUEWzEd-yrryU_T5UwA">
+    <ownedOperation xmi:id="_AIfMkEWuEd-yrryU_T5UwA" name="getResponse">
+      <ownedParameter xmi:id="_CjG04EWuEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_C53vEEWuEd-yrryU_T5UwA" name="invoke">
+      <ownedParameter xmi:id="_EW674EWuEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_EzeVAEWuEd-yrryU_T5UwA" name="setRequest">
+      <ownedParameter xmi:id="_GoQsYEWuEd-yrryU_T5UwA" direction="return"/>
+      <ownedParameter xmi:id="_GoQsYUWuEd-yrryU_T5UwA" name="HttpServletRequest request"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_5KsekEWuEd-yrryU_T5UwA" name="RESTService" clientDependency="_9wytsEWzEd-yrryU_T5UwA" isAbstract="true">
+    <ownedOperation xmi:id="_8cYRwEWuEd-yrryU_T5UwA" name="beforeInstanciation" isStatic="true">
+      <ownedParameter xmi:id="_-NRAkEWuEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_-hSv0EWuEd-yrryU_T5UwA" name="afterInstanciation">
+      <ownedParameter xmi:id="_D6sdcEWvEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_YKsL4EWvEd-yrryU_T5UwA" name="beforeInsert">
+      <ownedParameter xmi:id="_ZUz1oEWvEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_Z4ubAEWvEd-yrryU_T5UwA" name="afterInsert">
+      <ownedParameter xmi:id="_eoPeIEWvEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_e5Y4gEWvEd-yrryU_T5UwA" name="beforeInvokation">
+      <ownedParameter xmi:id="_glz-EEWvEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_g8hN4EWvEd-yrryU_T5UwA" name="aferInvokation">
+      <ownedParameter xmi:id="_iGsiAEWvEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_C0OvMEWwEd-yrryU_T5UwA" name="DefaultResourceService">
+    <generalization xmi:id="_MTISkEWwEd-yrryU_T5UwA" general="_5KsekEWuEd-yrryU_T5UwA"/>
+    <ownedOperation xmi:id="_fLqe0EWwEd-yrryU_T5UwA" name="create">
+      <ownedParameter xmi:id="_gxGLkEWwEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_hNX34EWwEd-yrryU_T5UwA" name="delete">
+      <ownedParameter xmi:id="_hgfoMEWwEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_h225wEWwEd-yrryU_T5UwA" name="update">
+      <ownedParameter xmi:id="_ijAOEEWwEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_i95aUEWwEd-yrryU_T5UwA" name="read">
+      <ownedParameter xmi:id="_jPZaAEWwEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_kQo0kEWwEd-yrryU_T5UwA" name="setModelClass" visibility="package">
+      <ownedParameter xmi:id="_lt2ZcEWwEd-yrryU_T5UwA" direction="return"/>
+      <ownedParameter xmi:id="_lt3AgEWwEd-yrryU_T5UwA" name="String model"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_l_QSgEWwEd-yrryU_T5UwA" name="getModelClass" visibility="package">
+      <ownedParameter xmi:id="_msHYgEWwEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_5pdW0EWxEd-yrryU_T5UwA" memberEnd="_5pdW0UWxEd-yrryU_T5UwA _5pd94UWxEd-yrryU_T5UwA">
+    <ownedEnd xmi:id="_5pdW0UWxEd-yrryU_T5UwA" name="src" type="_F5BSsEWsEd-yrryU_T5UwA" association="_5pdW0EWxEd-yrryU_T5UwA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5pd94EWxEd-yrryU_T5UwA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5pdW0kWxEd-yrryU_T5UwA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_5pd94UWxEd-yrryU_T5UwA" name="dst" type="_7xiacEWtEd-yrryU_T5UwA" aggregation="composite" association="_5pdW0EWxEd-yrryU_T5UwA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5pd940WxEd-yrryU_T5UwA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5pd94kWxEd-yrryU_T5UwA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_6x0tEEWxEd-yrryU_T5UwA" memberEnd="_6x0tEUWxEd-yrryU_T5UwA _6x0tFEWxEd-yrryU_T5UwA">
+    <ownedEnd xmi:id="_6x0tEUWxEd-yrryU_T5UwA" name="src" type="_7xiacEWtEd-yrryU_T5UwA" association="_6x0tEEWxEd-yrryU_T5UwA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6x0tE0WxEd-yrryU_T5UwA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6x0tEkWxEd-yrryU_T5UwA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_6x0tFEWxEd-yrryU_T5UwA" name="dst" type="_C0OvMEWwEd-yrryU_T5UwA" aggregation="composite" association="_6x0tEEWxEd-yrryU_T5UwA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6x1UIUWxEd-yrryU_T5UwA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6x1UIEWxEd-yrryU_T5UwA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FeUE8EWyEd-yrryU_T5UwA" name="Responder">
+    <ownedOperation xmi:id="_J4uawEWyEd-yrryU_T5UwA" name="render">
+      <ownedParameter xmi:id="_KVFmoEWyEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_KqM7AEWyEd-yrryU_T5UwA" name="respond">
+      <ownedParameter xmi:id="_M8KWkEWyEd-yrryU_T5UwA" direction="return"/>
+      <ownedParameter xmi:id="_M8K9oEWyEd-yrryU_T5UwA" name="HttpServletResponse response"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_NWN1UEWyEd-yrryU_T5UwA" name="Responder">
+      <ownedParameter xmi:id="_PEptEEWyEd-yrryU_T5UwA" direction="return"/>
+      <ownedParameter xmi:id="_PEptEUWyEd-yrryU_T5UwA" name="Object response"/>
+      <ownedParameter xmi:id="_PEptEkWyEd-yrryU_T5UwA" name="String mimeType"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_QYiW0EWyEd-yrryU_T5UwA" memberEnd="_QYiW0UWyEd-yrryU_T5UwA _QYi94kWyEd-yrryU_T5UwA">
+    <ownedEnd xmi:id="_QYiW0UWyEd-yrryU_T5UwA" name="src" type="_F5BSsEWsEd-yrryU_T5UwA" association="_QYiW0EWyEd-yrryU_T5UwA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QYi94UWyEd-yrryU_T5UwA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QYi94EWyEd-yrryU_T5UwA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_QYi94kWyEd-yrryU_T5UwA" name="dst" type="_FeUE8EWyEd-yrryU_T5UwA" aggregation="composite" association="_QYiW0EWyEd-yrryU_T5UwA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QYi95EWyEd-yrryU_T5UwA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QYi940WyEd-yrryU_T5UwA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_X5auUEWyEd-yrryU_T5UwA" name="DataFormatContext">
+    <ownedOperation xmi:id="_aQtV0EWyEd-yrryU_T5UwA" name="DataFormatContext">
+      <ownedParameter xmi:id="_e0itYEWyEd-yrryU_T5UwA" direction="return"/>
+      <ownedParameter xmi:id="_e0jUcEWyEd-yrryU_T5UwA" name="IMarshaller marshaller"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_fJg30EWyEd-yrryU_T5UwA" name="marshallStrategy">
+      <ownedParameter xmi:id="_gXo30EWyEd-yrryU_T5UwA" direction="return"/>
+      <ownedParameter xmi:id="_gXpe4EWyEd-yrryU_T5UwA" name="Object object"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_gpuGUEWyEd-yrryU_T5UwA" name="unmarshallStrategy">
+      <ownedParameter xmi:id="_itet0EWyEd-yrryU_T5UwA" direction="return"/>
+      <ownedParameter xmi:id="_itet0UWyEd-yrryU_T5UwA" name="String serialized"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_spdOwEWyEd-yrryU_T5UwA" name="IMarshaller">
+    <ownedOperation xmi:id="_ttuvMEWyEd-yrryU_T5UwA" name="marshall">
+      <ownedParameter xmi:id="_xY_gAEWyEd-yrryU_T5UwA" direction="return"/>
+      <ownedParameter xmi:id="_xY_gAUWyEd-yrryU_T5UwA" name="String serialized"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_24ICMEWyEd-yrryU_T5UwA" name="unmarshall">
+      <ownedParameter xmi:id="_3rh1EEWyEd-yrryU_T5UwA" direction="return"/>
+      <ownedParameter xmi:id="_3rh1EUWyEd-yrryU_T5UwA" name="Object object"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_-Vz7wEWyEd-yrryU_T5UwA" name="XMLMarshaller" clientDependency="_QARyYEWzEd-yrryU_T5UwA">
+    <interfaceRealization xmi:id="_QARyYEWzEd-yrryU_T5UwA" supplier="_spdOwEWyEd-yrryU_T5UwA" client="_-Vz7wEWyEd-yrryU_T5UwA" contract="_spdOwEWyEd-yrryU_T5UwA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Afu1oEWzEd-yrryU_T5UwA" name="JSONMarshaller" clientDependency="_PVuZgEWzEd-yrryU_T5UwA">
+    <interfaceRealization xmi:id="_PVuZgEWzEd-yrryU_T5UwA" supplier="_spdOwEWyEd-yrryU_T5UwA" client="_Afu1oEWzEd-yrryU_T5UwA" contract="_spdOwEWyEd-yrryU_T5UwA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_JfpW8EWzEd-yrryU_T5UwA" memberEnd="_JfpW8UWzEd-yrryU_T5UwA _Jfp-AEWzEd-yrryU_T5UwA">
+    <ownedEnd xmi:id="_JfpW8UWzEd-yrryU_T5UwA" name="src" type="_FeUE8EWyEd-yrryU_T5UwA" association="_JfpW8EWzEd-yrryU_T5UwA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JfpW80WzEd-yrryU_T5UwA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JfpW8kWzEd-yrryU_T5UwA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_Jfp-AEWzEd-yrryU_T5UwA" name="dst" type="_-Vz7wEWyEd-yrryU_T5UwA" aggregation="composite" association="_JfpW8EWzEd-yrryU_T5UwA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Jfp-AkWzEd-yrryU_T5UwA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Jfp-AUWzEd-yrryU_T5UwA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_KGvMIEWzEd-yrryU_T5UwA" memberEnd="_KGvMIUWzEd-yrryU_T5UwA _KGvMJEWzEd-yrryU_T5UwA">
+    <ownedEnd xmi:id="_KGvMIUWzEd-yrryU_T5UwA" name="src" type="_FeUE8EWyEd-yrryU_T5UwA" association="_KGvMIEWzEd-yrryU_T5UwA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KGvMI0WzEd-yrryU_T5UwA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KGvMIkWzEd-yrryU_T5UwA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_KGvMJEWzEd-yrryU_T5UwA" name="dst" type="_Afu1oEWzEd-yrryU_T5UwA" aggregation="composite" association="_KGvMIEWzEd-yrryU_T5UwA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KGvzMEWzEd-yrryU_T5UwA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KGvMJUWzEd-yrryU_T5UwA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_KhU2YEWzEd-yrryU_T5UwA" memberEnd="_KhU2YUWzEd-yrryU_T5UwA _KhU2ZEWzEd-yrryU_T5UwA">
+    <ownedEnd xmi:id="_KhU2YUWzEd-yrryU_T5UwA" name="src" type="_FeUE8EWyEd-yrryU_T5UwA" association="_KhU2YEWzEd-yrryU_T5UwA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KhU2Y0WzEd-yrryU_T5UwA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KhU2YkWzEd-yrryU_T5UwA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_KhU2ZEWzEd-yrryU_T5UwA" name="dst" type="_X5auUEWyEd-yrryU_T5UwA" aggregation="composite" association="_KhU2YEWzEd-yrryU_T5UwA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KhU2ZkWzEd-yrryU_T5UwA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KhU2ZUWzEd-yrryU_T5UwA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_bGSdgEWzEd-yrryU_T5UwA" name="Context" isAbstract="true">
+    <ownedOperation xmi:id="_i_-WkEWzEd-yrryU_T5UwA" name="getContext" isStatic="true">
+      <ownedParameter xmi:id="_j1vg8EWzEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_kfOi0EWzEd-yrryU_T5UwA" name="getIdentity" isStatic="true">
+      <ownedParameter xmi:id="_lQTacEWzEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_lZSXUEWzEd-yrryU_T5UwA" name="getManager" isStatic="true">
+      <ownedParameter xmi:id="_mKXO8EWzEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_mUKrMEWzEd-yrryU_T5UwA" name="getMatcher" isStatic="true">
+      <ownedParameter xmi:id="_m0ei8EWzEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_m8daQEWzEd-yrryU_T5UwA" name="getServiceName" isStatic="true">
+      <ownedParameter xmi:id="_nxIYcEWzEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_oEdkIEWzEd-yrryU_T5UwA" name="getData" isStatic="true">
+      <ownedParameter xmi:id="_oZ3zcEWzEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_pjef0EWzEd-yrryU_T5UwA" name="setContext" visibility="package" isStatic="true">
+      <ownedParameter xmi:id="_qFvfYEWzEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_sDkeAEWzEd-yrryU_T5UwA" name="setIdentity" visibility="package" isStatic="true">
+      <ownedParameter xmi:id="_vFVl4EWzEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_w3uwkEWzEd-yrryU_T5UwA" name="setManager" visibility="package" isStatic="true">
+      <ownedParameter xmi:id="_xWeiEEWzEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_y-UpoEWzEd-yrryU_T5UwA" name="setMatcher" visibility="package" isStatic="true">
+      <ownedParameter xmi:id="_0WiZwEWzEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1mSKYEWzEd-yrryU_T5UwA" name="setServiceName" visibility="package" isStatic="true">
+      <ownedParameter xmi:id="_2N488EWzEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_3p5n8EWzEd-yrryU_T5UwA" name="setData" visibility="package" isStatic="true">
+      <ownedParameter xmi:id="_4Up1IEWzEd-yrryU_T5UwA" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8g7oUEWzEd-yrryU_T5UwA" supplier="_bGSdgEWzEd-yrryU_T5UwA" client="_7xiacEWtEd-yrryU_T5UwA"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_9wytsEWzEd-yrryU_T5UwA" supplier="_bGSdgEWzEd-yrryU_T5UwA" client="_5KsekEWuEd-yrryU_T5UwA"/>
+</uml:Package>
