@@ -1,0 +1,95 @@
+<project>
+
+	<property environment="env" />
+	
+	<property name="src.dir"		value="src"/>
+
+	<property name="build.dir"		value="build"/>
+	<property name="metainf.dir"	value="WebContent/META-INF"/>
+	<property name="webinf.dir"		value="WebContent/WEB-INF"/>
+	<property name="classes.dir"	value="${build.dir}/classes"/>
+	<property name="tomcatlib.dir"	value="${env.CATALINA_HOME}/lib"/>
+	<property name="lib.dir"		value="${webinf.dir}/lib"/>
+
+	<property name="main-class"		value="oata.HelloWorld"/>
+
+	<property file="build.properties"/>
+
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="**/*.jar" />
+		<fileset dir="${tomcatlib.dir}" includes="**/*.jar" />
+	</path>
+	
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+		<delete dir="ex2" />
+	</target>
+
+	<target name="compile">
+		<mkdir dir="${classes.dir}"/>
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath" />
+		<copy todir="${classes.dir}">
+			<fileset dir="${src.dir}" excludes="**/*.java" />
+		</copy>
+		
+		<mkdir dir="ex2" />
+		<mkdir dir="ex2/META-INF" />
+		<copy todir="ex2/META-INF">
+			<fileset dir="${metainf.dir}" />
+		</copy>
+		<mkdir dir="ex2/WEB-INF" />
+		<copy todir="ex2/WEB-INF">
+			<fileset dir="${webinf.dir}" />
+		</copy>
+		<copy todir="ex2/WEB-INF/classes">
+			<fileset dir="${build.dir}/classes"/>
+		</copy>
+		
+		<war destfile="ex2.war">
+			<fileset dir="ex2" />
+		</war>
+	</target>
+
+	<path id="tomcat.classpath">
+		<pathelement location="${catalina-ant.jar}"/>
+	</path> 
+	
+	<!-- Configure the custom Ant tasks for the Manager application -->
+	<taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask">
+		<classpath refid="tomcat.classpath" /> 
+	</taskdef>
+	<taskdef name="list" classname="org.apache.catalina.ant.ListTask">
+		<classpath refid="tomcat.classpath" /> 
+	</taskdef>
+	<taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask">
+		<classpath refid="tomcat.classpath" /> 
+	</taskdef>
+	<taskdef name="resources" classname="org.apache.catalina.ant.ResourcesTask">
+		<classpath refid="tomcat.classpath" /> 
+	</taskdef>
+	<taskdef name="roles" classname="org.apache.catalina.ant.RolesTask">
+		<classpath refid="tomcat.classpath" /> 
+	</taskdef>
+	<taskdef name="start" classname="org.apache.catalina.ant.StartTask">
+		<classpath refid="tomcat.classpath" /> 
+	</taskdef>
+	<taskdef name="stop" classname="org.apache.catalina.ant.StopTask">
+		<classpath refid="tomcat.classpath" /> 
+	</taskdef>
+	<taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask">
+		<classpath refid="tomcat.classpath" /> 
+	</taskdef>
+
+	<target name="run" depends="compile">
+		<deploy url="${managerUrl}" username="${username}" password="${password}"
+		            path="${applicationPath}" war="file:ex2.war"/>
+	</target>
+
+	<target name="stop" description="Remove web application">
+		<undeploy url="${managerUrl}" username="${username}" password="${password}"
+			path="${applicationPath}"/>
+	</target>
+	
+	<target name="main" depends="clean,run"/>
+
+</project>
